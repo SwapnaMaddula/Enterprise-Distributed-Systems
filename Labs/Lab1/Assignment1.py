@@ -22,7 +22,7 @@ latency_dict = {}
 
 for i in range(len(hosts)):
  ping = subprocess.Popen(
-    ["ping", "-n", "3", re.findall(r"\[([0-9.]+)\]" , hosts[i])],
+    ["ping", "-n", "3", re.findall(r"\[([0-9.]+)\]" , hosts[i])[0] ],
     stdout = subprocess.PIPE,
     stderr = subprocess.PIPE
 )
